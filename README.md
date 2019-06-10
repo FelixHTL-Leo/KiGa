@@ -1,7 +1,8 @@
 # KiGa
 ## Quick Overview
 #### Our Project
-Our projet trys to improve the communication between the employees of the Kindergarden and the parents.
+Our projet trys to improve the communication between the employees of the Kindergarden and the parents. Also if you think that our website is poorly designed then please ignore the design because we are no web-stylist, because we think more functionally then stylish.
+
 It is written in php, html and css and an MySQL Database is used.
 
 ### You will need:
@@ -12,7 +13,7 @@ It is written in php, html and css and an MySQL Database is used.
 
 
 ### How to use
-After installing xampp you open the control panel and start Apache and MySQL. Then open your web browser(recommended Chrome) and type localhost. Now you should be at the xampp dashboard. After this you should clone or download our Git Project into your htdocs folder in the xampp folder. When you on windows and you dont have an git bash then just download it.
+After installing xampp you open the control panel and start Apache and MySQL. Then open your web browser(recommended Chrome) and type localhost. Now you should be at the xampp dashboard. After this you should clone or download our Git Project into your htdocs folder in the xampp folder.
 
 Now you are set to go. Go to the web browser and type localhost/KiGa. Then open the ProjectKiGa folder. In there you see a folder called start. Click on it and our website should be shown. But your are not finished because the database also has to be set up.
 
