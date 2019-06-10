@@ -49,7 +49,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	if($bool) // checks if bool is true
 	{
 		$query = mysqli_query($link, "Select * from users"); // SQL Query
-    $id = mysqli_num_rows($query);
+    $id = mysqli_num_rows($query) + 1;
 		mysqli_query($link, "INSERT INTO users (id, username, password, role) VALUES ('$id','$username','$password','$emp')"); //Inserts the value to table users
 		Print '<script>alert("Successfully Registered! ");</script>'; // Prompts the user
 		Print '<script>window.location.assign("register.php");</script>'; // redirects to register.php

@@ -21,7 +21,7 @@
       $groupPlace ="-";
     }
     $query = mysqli_query($link, "Select * from messages"); // SQL Query
-    $id = mysqli_num_rows($query);
+    $id = mysqli_num_rows($query) + 1;
 		mysqli_query($link, "INSERT INTO messages (id, details, date_posted, time_posted, public, groupPlaceing) VALUES ('$id','$details','$date','$time','$decision','$groupPlace')"); //SQL query
     header("location: home.php");
 	}

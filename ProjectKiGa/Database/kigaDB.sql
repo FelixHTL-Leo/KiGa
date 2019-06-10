@@ -19,9 +19,9 @@ create table messages (
   groupPlaceing varchar(10)
 );
 
-insert into users (id, username, password, role, groups) values('0', 'Christine', 'wert', '+', '-');
-insert into users (id, username, password, role, groups) values('1', 'Klaus', 'wert', '-', 'Blue');
-insert into users (id, username, password, role, groups) values('2', 'Peter', 'wert', '-', 'Red');
-insert into messages (id, details, date_posted, time_posted, public, groupPlaceing) values('0', 'Hello Public', 'June 09, 2019', '19:08:52', 'yes', '-');
-insert into messages (id, details, date_posted, time_posted, public, groupPlaceing) values('1', 'Hello Blue', 'June 09, 2019', '19:08:52', 'no', 'Blue');
-insert into messages (id, details, date_posted, time_posted, public, groupPlaceing) values('2', 'Hello Red', 'June 09, 2019', '19:08:52', 'no', 'Red');
+insert into users (id, username, password, role, groups) values('1', 'Christine', 'wert', '+', '-');
+insert into users (id, username, password, role, groups) values('2', 'Klaus', 'wert', '-', 'Blue');
+insert into users (id, username, password, role, groups) values('3', 'Peter', 'wert', '-', 'Red');
+insert into messages (id, details, date_posted, time_posted, public, groupPlaceing) values('1', 'Hello Public', 'June 09, 2019', '19:08:52', 'yes', '-');
+insert into messages (id, details, date_posted, time_posted, public, groupPlaceing) values('2', 'Hello Blue', 'June 09, 2019', '19:08:52', 'no', 'Blue');
+insert into messages (id, details, date_posted, time_posted, public, groupPlaceing) values('3', 'Hello Red', 'June 09, 2019', '19:08:52', 'no', 'Red');
