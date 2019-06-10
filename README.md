@@ -17,3 +17,6 @@ After installing xampp you open the control panel and start Apache and MySQL. Th
 Now you are set to go. Go to the web browser and type localhost/KiGa. Then open the ProjectKiGa folder. In there you see a folder called start. Click on it and our website should be shown. But your are not finished because the database also has to be set up.
 
 ### Database
+You just type in your web browser localhost/phpmyadmin and on the left side there is a list of your databases. Click an the button New and then click Import and there you choose our file kigaDB.sql in the Database and zack you should have our database.
+
+Now you are done with setting up and have fun with our website.
