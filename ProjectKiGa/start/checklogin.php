@@ -4,7 +4,7 @@
 	$username = mysqli_real_escape_string($link, $_POST['username']);
 	$password = mysqli_real_escape_string($link, $_POST['password']);
 	mysqli_connect("localhost", "root","") or die(mysql_error()); //Connect to server
-	mysqli_select_db($link, "first_db") or die("Cannot connect to database"); //Connect to database
+	mysqli_select_db($link, "kigaDB") or die("Cannot connect to database"); //Connect to database
 	$query = mysqli_query($link, "SELECT * from users WHERE username='$username'"); //Query the users table if there are matching rows equal to $username
 	$exists = mysqli_num_rows($query); //Checks if username exists
 	$table_users = "";

@@ -9,7 +9,7 @@
 		</div>
 	</body>
 	<br/>
-	<h2 align="center">List</h2>
+	<h2 align="center">Messages</h2>
 	<table width="1525" border="1px">
 			<tr>
 				<th width="1225">Details</th>
@@ -18,8 +18,8 @@
 			<?php
         $link = new mysqli("localhost", "root", "");
 				mysqli_connect("localhost", "root","") or die(mysql_error()); //Connect to server
-				mysqli_select_db($link, "first_db") or die("Cannot connect to database"); //connect to database
-				$query = mysqli_query($link, "Select * from list Where public='yes'"); // SQL Query
+				mysqli_select_db($link, "kigaDB") or die("Cannot connect to database"); //connect to database
+				$query = mysqli_query($link, "Select * from messages Where public='yes'"); // SQL Query
 				while($row = mysqli_fetch_array($query))
 				{
 					Print "<tr>";

@@ -34,7 +34,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	}
   $bool = true;
 	mysqli_connect("localhost", "root","") or die(mysql_error()); //Connect to server
-	mysqli_select_db($link, "first_db") or die("Cannot connect to database"); //Connect to database
+	mysqli_select_db($link, "kigaDB") or die("Cannot connect to database"); //Connect to database
 	$query = mysqli_query($link, "Select * from users"); //Query the users table
 	while($row = mysqli_fetch_array($query)) //display all rows from query
 	{

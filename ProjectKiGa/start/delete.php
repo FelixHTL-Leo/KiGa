@@ -9,9 +9,9 @@
 	if($_SERVER['REQUEST_METHOD'] == "GET")
 	{
 		mysqli_connect("localhost", "root","") or die(mysql_error()); //Connect to server
-		mysqli_select_db($link, "first_db") or die("Cannot connect to database"); //Connect to database
+		mysqli_select_db($link, "kigaDB") or die("Cannot connect to database"); //Connect to database
 		$id = $_GET['id'];
-		mysqli_query($link, "DELETE FROM list WHERE id='$id'");
+		mysqli_query($link, "DELETE FROM messages WHERE id='$id'");
 		header("location: home.php");
 	}
 ?>

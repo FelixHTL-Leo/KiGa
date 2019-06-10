@@ -32,8 +32,8 @@
 					$_SESSION['id'] = $id;
 					$id_exists = true;
 					mysqli_connect("localhost", "root","") or die(mysql_error()); //Connect to server
-					mysqli_select_db($link, "first_db") or die("Cannot connect to database"); //connect to database
-					$query = mysqli_query($link, "Select * from list Where id='$id'"); // SQL Query
+					mysqli_select_db($link, "kigaDB") or die("Cannot connect to database"); //connect to database
+					$query = mysqli_query($link, "Select * from messages Where id='$id'"); // SQL Query
 					$count = mysqli_num_rows($query);
 					if($count > 0)
 					{
@@ -62,7 +62,7 @@
 		Print '
 		<form action="edit.php" method="POST" id="form2">
 			public post? <input type="checkbox" name="public[]" value="yes"/><br/>
-			<input type="submit" value="Update List" id="updateButton"/>
+			<input type="submit" value="Update Messages" id="updateButton"/>
 		</form>
 		<textarea rows="5" cols="50" name="details" form="form2">'. $value .'</textarea>
 		';
@@ -79,7 +79,7 @@
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
 		mysqli_connect("localhost", "root","") or die(mysql_error()); //Connect to server
-		mysqli_select_db($link, "first_db") or die("Cannot connect to database"); //Connect to database
+		mysqli_select_db($link, "kigaDB") or die("Cannot connect to database"); //Connect to database
 		$details = mysqli_real_escape_string($link, $_POST['details']);
 		$public = "no";
 		$id = $_SESSION['id'];
@@ -92,7 +92,7 @@
 				$public = "yes";
 			}
 		}
-		mysqli_query($link, "UPDATE list SET details='$details', public='$public', date_edited='$date', time_edited='$time' WHERE id='$id'") ;
+		mysqli_query($link, "UPDATE messages SET details='$details', public='$public', date_edited='$date', time_edited='$time' WHERE id='$id'") ;
 		header("location: home.php");
 	}
 ?>

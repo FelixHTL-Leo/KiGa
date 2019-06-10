@@ -25,7 +25,7 @@
 
 		<form action="add.php" method="POST" id="form">
 			Public post? <input type="checkbox" name="public" value="yes" checked/><br/>
-			<input id="addButton" type="submit" value="Add to list"/>
+			<input id="addButton" type="submit" value="Add to Messages"/>
 		</form>
 		<textarea rows="5" cols="50" name="details" form="form" placeholder="New Message"></textarea>
 		<h2 align="center">Messages written</h2>
@@ -40,8 +40,8 @@
 			</tr>
 			<?php
 				mysqli_connect("localhost", "root","") or die(mysql_error()); //Connect to server
-				mysqli_select_db($link, "first_db") or die("Cannot connect to database"); //connect to database
-				$query = mysqli_query($link, "Select * from list"); // SQL Query
+				mysqli_select_db($link, "kigaDB") or die("Cannot connect to database"); //connect to database
+				$query = mysqli_query($link, "Select * from messages"); // SQL Query
 				while($row = mysqli_fetch_array($query))
 				{
 					Print "<tr>";
