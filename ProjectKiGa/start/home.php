@@ -43,6 +43,7 @@
 				<th width="10">Edit</th>
 				<th width="10">Delete</th>
 				<th width="100">Public Post</th>
+				<th>Group</th>
 			</tr>
 			<?php
 				mysqli_connect("localhost", "root","") or die(mysql_error()); //Connect to server
@@ -57,6 +58,7 @@
 						Print '<td align="center" width="10"><a href="edit.php?id='. $row['id'] .'">edit</a> </td>';
 						Print '<td align="center" width="10"><a href="#" onclick="myFunction('.$row['id'].')">delete</a> </td>';
 						Print '<td align="center" width="10">'. $row['public']. "</td>";
+						Print '<td align="centere">'. $row['groupPlaceing'] ."</td>";
 					Print "</tr>";
 				}
 			?>

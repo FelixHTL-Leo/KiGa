@@ -12,6 +12,12 @@
 			Enter Username: <input type="text" name="username" required="required"/> <br/>
 			Enter Password: <input type="password" name="password" required="required" /> <br/>
 			Employee <input type="checkbox" name="emp" value="no"/><br/>
+			<select name="groups">
+		    <option value="Blue">Blue</option>
+		    <option value="Green">Green</option>
+		    <option value="Yellow">Yellow</option>
+		    <option value="Red">Red</option>
+	  	</select>
 			<input id="registerButton" type="submit" value="Register"/>
 		</form>
 	</body>
@@ -26,8 +32,10 @@ if (mysqli_connect_errno()) {
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$username = mysqli_real_escape_string($link, $_POST['username']);
 	$password = mysqli_real_escape_string($link, $_POST['password']);
+	$groups = mysqli_real_escape_string($link, $_POST['groups']);
 	if($_POST['emp'] != null){
 		$emp = '+';
+		$groups = '-';
 	}
 	else{
 		$emp = '-';
@@ -50,7 +58,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	{
 		$query = mysqli_query($link, "Select * from users"); // SQL Query
     $id = mysqli_num_rows($query) + 1;
-		mysqli_query($link, "INSERT INTO users (id, username, password, role) VALUES ('$id','$username','$password','$emp')"); //Inserts the value to table users
+		mysqli_query($link, "INSERT INTO users (id, username, password, role, groups) VALUES ('$id','$username','$password','$emp','$groups')"); //Inserts the value to table users
 		Print '<script>alert("Successfully Registered! ");</script>'; // Prompts the user
 		Print '<script>window.location.assign("register.php");</script>'; // redirects to register.php
 	}
