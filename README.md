@@ -21,3 +21,13 @@ Now you are set to go. Go to the web browser and type localhost/KiGa. Then open 
 You just type in your web browser localhost/phpmyadmin and on the left side there is a list of your databases. Click an the button New and then click Import and there you choose our file kigaDB.sql in the Database and zack you should have our database.
 
 Now you are done with setting up and have fun with our website.
+
+## What our website can do
+First you can log in as a employee(christine, all paswords are 'wert'
+for the sake of simplicity) or as an parent(Klaus, group 'Blue')(Peter, group 'Red').
+
+As an employee you can write new Messages edit them and also delete them. At writing a new one you can decide between if is public for everyone or not and then you can decide for which group this message is relevant.
+
+ Also you can register new Accounts where you can decide if it is an employee or not and if not then which group their kid is in.
+
+ As an parent you can see the public messages and also the messages that are dedicated to their group.
