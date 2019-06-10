@@ -24,6 +24,12 @@
 		</div>
 
 		<form action="add.php" method="POST" id="form">
+			<select name="groups">
+		    <option value="Blue">Blue</option>
+		    <option value="Green">Green</option>
+		    <option value="Yellow">Yellow</option>
+		    <option value="Red">Red</option>
+	  	</select>
 			Public post? <input type="checkbox" name="public" value="yes" checked/><br/>
 			<input id="addButton" type="submit" value="Add to Messages"/>
 		</form>

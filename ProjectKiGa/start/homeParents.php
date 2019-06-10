@@ -16,16 +16,33 @@
 				<th width="300">Post Time</th>
 			</tr>
 			<?php
-        $link = new mysqli("localhost", "root", "");
+				$link = new mysqli("localhost", "root", "");
+				session_start(); //starts the session
+				if($_SESSION['user']){ //checks if user is logged in
+				}
+				else{
+					header("location:index.php"); // redirects if user is not logged in
+				}
+				$user = $_SESSION['user'];
 				mysqli_connect("localhost", "root","") or die(mysql_error()); //Connect to server
 				mysqli_select_db($link, "kigaDB") or die("Cannot connect to database"); //connect to database
-				$query = mysqli_query($link, "Select * from messages Where public='yes'"); // SQL Query
+				$query = mysqli_query($link, "Select * from messages"); // SQL Query
+				$stmt = $link->prepare("SELECT groups FROM users WHERE username = ?");
+				$stmt->bind_param('s', $user);
+
+				$stmt->execute();
+
+				$stmt->bind_result($user);
+				$stmt->store_result();
+				$stmt->fetch();
 				while($row = mysqli_fetch_array($query))
 				{
-					Print "<tr>";
-						Print '<td align="center">'. $row['details'] . "</td>";
-						Print '<td align="center">'. $row['date_posted']. " - ". $row['time_posted']."</td>";
-					Print "</tr>";
+					if($row['public'] == 'yes' || $row['public'] == 'no' && $user == $row['groupPlaceing']){
+						Print "<tr>";
+							Print '<td align="center">'. $row['details'] . "</td>";
+							Print '<td align="center">'. $row['date_posted']. " - ". $row['time_posted']."</td>";
+						Print "</tr>";
+					}
 				}
 			?>
 	</table>

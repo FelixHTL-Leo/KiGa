@@ -1,7 +1,7 @@
 # KiGa
 ## Quick Overview
 #### Our Project
-Our projet trys to improve the communication between the employees of the Kindergarden and the parents. Also if you think that our website is poorly designed then please ignore the design because we are no web-stylist, because we think more functionally then stylish.
+Our project trys to improve the communication between the employees of the Kindergarden and the parents. Also if you think that our website is poorly designed then please ignore the design because we are no web-stylist, because we think more functionally then stylish.
 
 It is written in php, html and css and an MySQL Database is used.
 
