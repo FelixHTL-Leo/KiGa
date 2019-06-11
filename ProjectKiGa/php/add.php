@@ -1,6 +1,6 @@
 
 <?php
-  $link = new mysqli("localhost", "root", "");
+  $link = new mysqli("localhost", "root", "test");
 	session_start();
 	if($_SESSION['user']){
 	}
@@ -14,7 +14,7 @@
 		$date = strftime("%B %d, %Y");//date
 		$decision ="no";
     $groupPlace = mysqli_real_escape_string($link, $_POST['groups']);
-		mysqli_connect("localhost", "root","") or die(mysql_error()); //Connect to server
+		mysqli_connect("localhost", "root","test") or die(mysql_error()); //Connect to server
 		mysqli_select_db($link, "kigaDB") or die("Cannot connect to database"); //Connect to database
     if($_POST['public'] != null){
       $decision = "yes";
