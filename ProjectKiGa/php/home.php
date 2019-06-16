@@ -4,7 +4,7 @@
 		<link rel="stylesheet" href="CSS/homeStyle.css">
 	</head>
 	<?php
-  $link = new mysqli("localhost", "root", "test");
+  $link = new mysqli("mariadb", "root", "test");
 	session_start(); //starts the session
 	if($_SESSION['user']){ //checks if user is logged in
 	}
@@ -46,7 +46,7 @@
 				<th>Group</th>
 			</tr>
 			<?php
-				mysqli_connect("localhost", "root","test") or die(mysql_error()); //Connect to server
+				mysqli_connect("mariadb", "root","test") or die(mysql_error()); //Connect to server
 				mysqli_select_db($link, "kigaDB") or die("Cannot connect to database"); //connect to database
 				$query = mysqli_query($link, "Select * from messages"); // SQL Query
 				while($row = mysqli_fetch_array($query))

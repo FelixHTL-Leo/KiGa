@@ -1,9 +1,9 @@
 <?php
 	session_start();
-  $link = new mysqli("localhost", "root", "test");
+  $link = new mysqli("mariadb", "root", "test");
 	$username = mysqli_real_escape_string($link, $_POST['username']);
 	$password = mysqli_real_escape_string($link, $_POST['password']);
-	mysqli_connect("localhost", "root","test") or die(mysql_error()); //Connect to server
+	mysqli_connect("mariadb", "root","test") or die(mysql_error()); //Connect to server
 	mysqli_select_db($link, "kigaDB") or die("Cannot connect to database"); //Connect to database
 	$query = mysqli_query($link, "SELECT * from users WHERE username='$username'"); //Query the users table if there are matching rows equal to $username
 	$exists = mysqli_num_rows($query); //Checks if username exists

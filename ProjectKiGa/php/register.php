@@ -24,7 +24,7 @@
 </html>
 
 <?php
-$link = new mysqli("localhost", "root", "test");
+$link = new mysqli("mariadb", "root", "test");
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
@@ -41,7 +41,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		$emp = '-';
 	}
   $bool = true;
-	mysqli_connect("localhost", "root","test") or die(mysql_error()); //Connect to server
+	mysqli_connect("mariadb", "root","test") or die(mysql_error()); //Connect to server
 	mysqli_select_db($link, "kigaDB") or die("Cannot connect to database"); //Connect to database
 	$query = mysqli_query($link, "Select * from users"); //Query the users table
 	while($row = mysqli_fetch_array($query)) //display all rows from query

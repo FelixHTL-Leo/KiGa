@@ -25,13 +25,13 @@
 				<th>Public Post</th>
 			</tr>
 			<?php
-        $link = new mysqli("localhost", "root", "test");
+        $link = new mysqli("mariadb", "root", "test");
 				if(!empty($_GET['id']))
 				{
 					$id = $_GET['id'];
 					$_SESSION['id'] = $id;
 					$id_exists = true;
-					mysqli_connect("localhost", "root","test") or die(mysql_error()); //Connect to server
+					mysqli_connect("mariadb", "root","test") or die(mysql_error()); //Connect to server
 					mysqli_select_db($link, "kigaDB") or die("Cannot connect to database"); //connect to database
 					$query = mysqli_query($link, "Select * from messages Where id='$id'"); // SQL Query
 					$count = mysqli_num_rows($query);
@@ -75,10 +75,10 @@
 	</body>
 </html>
 <?php
-  $link = new mysqli("localhost", "root", "test");
+  $link = new mysqli("mariadb", "root", "test");
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
-		mysqli_connect("localhost", "root","test") or die(mysql_error()); //Connect to server
+		mysqli_connect("mariadb", "root","test") or die(mysql_error()); //Connect to server
 		mysqli_select_db($link, "kigaDB") or die("Cannot connect to database"); //Connect to database
 		$details = mysqli_real_escape_string($link, $_POST['details']);
 		$public = "no";

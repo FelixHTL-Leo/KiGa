@@ -1,5 +1,5 @@
 <?php
-  $link = new mysqli("localhost", "root", "test");
+  $link = new mysqli("mariadb", "root", "test");
 	session_start(); //starts the session
 	if($_SESSION['user']){ //checks if user is logged in
 	}
@@ -8,7 +8,7 @@
 	}
 	if($_SERVER['REQUEST_METHOD'] == "GET")
 	{
-		mysqli_connect("localhost", "root","test") or die(mysql_error()); //Connect to server
+		mysqli_connect("mariadb", "root","test") or die(mysql_error()); //Connect to server
 		mysqli_select_db($link, "kigaDB") or die("Cannot connect to database"); //Connect to database
 		$id = $_GET['id'];
 		mysqli_query($link, "DELETE FROM messages WHERE id='$id'");
