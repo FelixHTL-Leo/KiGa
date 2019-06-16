@@ -4,11 +4,13 @@
 		<link rel="stylesheet" href="CSS/editStyle.css">
 	</head>
 	<?php
+	error_reporting(E_ERROR | E_PARSE);
 	session_start(); //starts the session
 	if($_SESSION['user']){ //checks if user is logged in
 	}
 	else{
-		header("location:index.php"); // redirects if user is not logged in
+		//header("location:index.php"); // redirects if user is not logged in
+		Print '<script>window.location.assign("index.php");</script>';
 	}
 	$user = $_SESSION['user']; //assigns user value
 	$id_exists = false;
@@ -34,6 +36,7 @@
 					mysqli_connect("mariadb", "root","test") or die(mysql_error()); //Connect to server
 					mysqli_select_db($link, "kigaDB") or die("Cannot connect to database"); //connect to database
 					$query = mysqli_query($link, "Select * from messages Where id='$id'"); // SQL Query
+					Print $id;
 					$count = mysqli_num_rows($query);
 					if($count > 0)
 					{
@@ -60,12 +63,12 @@
 		if($id_exists)
 		{
 		Print '
-		<form action="edit.php" method="POST" id="form2">
-			public post? <input type="checkbox" name="public[]" value="yes"/><br/>
-			<input type="submit" value="Update Messages" id="updateButton"/>
-		</form>
-		<textarea rows="5" cols="50" name="details" form="form2">'. $value .'</textarea>
-		';
+			<form action="edit.php" method="POST" id="form2">
+				public post? <input type="checkbox" name="public[]" value="yes"/><br/>
+				<input type="submit" value="Update Messages" id="updateButton"/>
+			</form>
+			<textarea rows="5" cols="50" name="details" form="form2">'. $value .'</textarea>
+			';
 		}
 		else
 		{
@@ -83,6 +86,7 @@
 		$details = mysqli_real_escape_string($link, $_POST['details']);
 		$public = "no";
 		$id = $_SESSION['id'];
+		Print $id;
 		$time = strftime("%X");//time
 		$date = strftime("%B %d, %Y");//date
 		foreach($_POST['public'] as $list)
@@ -93,6 +97,7 @@
 			}
 		}
 		mysqli_query($link, "UPDATE messages SET details='$details', public='$public', date_edited='$date', time_edited='$time' WHERE id='$id'") ;
-		header("location: home.php");
+		//header("location: home.php");
+		Print '<script>window.location.assign("home.php");</script>';
 	}
 ?>

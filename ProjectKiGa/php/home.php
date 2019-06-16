@@ -4,6 +4,7 @@
 		<link rel="stylesheet" href="CSS/homeStyle.css">
 	</head>
 	<?php
+	error_reporting(E_ERROR | E_PARSE);
   $link = new mysqli("mariadb", "root", "test");
 	session_start(); //starts the session
 	if($_SESSION['user']){ //checks if user is logged in

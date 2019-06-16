@@ -24,6 +24,7 @@
 </html>
 
 <?php
+error_reporting(E_ERROR | E_PARSE);
 $link = new mysqli("mariadb", "root", "test");
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());

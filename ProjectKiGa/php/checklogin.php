@@ -1,4 +1,5 @@
 <?php
+	error_reporting(E_ERROR | E_PARSE);
 	session_start();
   $link = new mysqli("mariadb", "root", "test");
 	$username = mysqli_real_escape_string($link, $_POST['username']);

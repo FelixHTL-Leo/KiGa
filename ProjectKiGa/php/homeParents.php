@@ -16,6 +16,7 @@
 				<th width="300">Post Time</th>
 			</tr>
 			<?php
+				error_reporting(E_ERROR | E_PARSE);
 				$link = new mysqli("mariadb", "root", "test");
 				session_start(); //starts the session
 				if($_SESSION['user']){ //checks if user is logged in
