@@ -22,7 +22,7 @@ It is written in php, html and css and an MySQL Database is used.
 
 ## What our website can do
  - Employee login:
-    - Chrisine, password: wert
+    - Christine, password: wert
  - Parent login:
     - Klaus, group Blue, wert
     - Peter, group Red, same password

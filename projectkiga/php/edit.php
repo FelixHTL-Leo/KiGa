@@ -4,7 +4,7 @@
 		<link rel="stylesheet" href="CSS/editStyle.css">
 	</head>
 	<?php
-	error_reporting(E_ERROR | E_PARSE);
+
 	session_start(); //starts the session
 	if($_SESSION['user']){ //checks if user is logged in
 	}
@@ -27,6 +27,7 @@
 				<th>Public Post</th>
 			</tr>
 			<?php
+				error_reporting(E_ERROR | E_PARSE);
         $link = new mysqli("mariadb", "root", "test");
 				if(!empty($_GET['id']))
 				{
@@ -36,7 +37,6 @@
 					mysqli_connect("mariadb", "root","test") or die(mysql_error()); //Connect to server
 					mysqli_select_db($link, "kigaDB") or die("Cannot connect to database"); //connect to database
 					$query = mysqli_query($link, "Select * from messages Where id='$id'"); // SQL Query
-					Print $id;
 					$count = mysqli_num_rows($query);
 					if($count > 0)
 					{
@@ -86,9 +86,9 @@
 		$details = mysqli_real_escape_string($link, $_POST['details']);
 		$public = "no";
 		$id = $_SESSION['id'];
-		Print $id;
 		$time = strftime("%X");//time
 		$date = strftime("%B %d, %Y");//date
+		Print '<textarea name="check" id="check" cols="60" rows="5">'. $details .'</textarea>';
 		foreach($_POST['public'] as $list)
 		{
 			if($list != null)
@@ -98,6 +98,6 @@
 		}
 		mysqli_query($link, "UPDATE messages SET details='$details', public='$public', date_edited='$date', time_edited='$time' WHERE id='$id'") ;
 		//header("location: home.php");
-		Print '<script>window.location.assign("home.php");</script>';
+		//Print '<script>window.location.assign("home.php");</script>';
 	}
 ?>
